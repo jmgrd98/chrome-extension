@@ -1,3 +1,5 @@
+// popup.js
+
 let timer = null;
 
 function updateTime() {
@@ -13,6 +15,14 @@ function updateTime() {
 document.addEventListener('DOMContentLoaded', function() {
   updateTime();
   timer = setInterval(updateTime, 1000);
+
+  document.getElementById('start-button').addEventListener('click', function() {
+    chrome.runtime.sendMessage({ type: 'startTimer' });
+  });
+
+  document.getElementById('stop-button').addEventListener('click', function() {
+    chrome.runtime.sendMessage({ type: 'stopTimer' });
+  });
 
   document.getElementById('reset-button').addEventListener('click', function() {
     chrome.runtime.sendMessage({ type: 'resetTime' }, function(response) {

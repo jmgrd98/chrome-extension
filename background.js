@@ -1,3 +1,5 @@
+// background.js
+
 let timer = null;
 let elapsedTime = 0;
 
@@ -18,5 +20,16 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   } else if (request.type === 'resetTime') {
     elapsedTime = 0;
     sendResponse({ elapsedTime: elapsedTime });
+  } else if (request.type === 'startTimer') {
+    if (timer === null) {
+      timer = setInterval(function() {
+        elapsedTime += 1000;
+      }, 1000);
+    }
+  } else if (request.type === 'stopTimer') {
+    if (timer !== null) {
+      clearInterval(timer);
+      timer = null;
+    }
   }
 });

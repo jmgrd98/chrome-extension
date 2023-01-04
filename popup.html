@@ -2,9 +2,30 @@
 <html>
 <head>
   <title>Time Tracker</title>
+  <style>
+    #time {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    #start-button, #stop-button, #reset-button {
+      background-color: lightgray;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #start-button:hover, #stop-button:hover, #reset-button:hover {
+      background-color: gray;
+    }
+  </style>
 </head>
 <body>
   <div id="time"></div>
+  <button id="start-button">Start</button>
+  <button id="stop-button">Stop</button>
   <button id="reset-button">Reset</button>
   <script src="popup.js"></script>
 </body>
