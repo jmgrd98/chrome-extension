@@ -1,0 +1,18 @@
+ #time {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  #reset-button {
+    background-color: lightgray;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  #reset-button:hover {
+    background-color: gray;
+  }
+
